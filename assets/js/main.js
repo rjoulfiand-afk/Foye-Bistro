@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initDrawerEvents();
 });
 
-/* =========================================================
-   1. HYDRATE STATIC RESTAURANT INFO
-   ========================================================= */
+// Restaurant information
 function initRestaurantInfo() {
   const { restaurant } = FOYE_DATA;
 
   const heroImg = document.getElementById("hero-image");
-  if (heroImg) heroImg.src = restaurant.heroImage;
+  if (heroImg && heroImg.getAttribute("src") !== restaurant.heroImage) {
+    heroImg.src = restaurant.heroImage;
+  }
 
   const setText = (id, text) => {
     const el = document.getElementById(id);
@@ -39,9 +39,7 @@ function initRestaurantInfo() {
   if (igBtn) igBtn.href = restaurant.instagramUrl;
 }
 
-/* =========================================================
-   2. CONTEXTUAL WHATSAPP LINKS
-   ========================================================= */
+// WhatsApp links
 function buildWhatsAppUrl(type = "general") {
   const { whatsappNumber, waMessages } = FOYE_DATA.restaurant;
   const message = waMessages[type] || waMessages.general;
@@ -57,9 +55,7 @@ function initWhatsAppLinks() {
   });
 }
 
-/* =========================================================
-   3. CURATED MENU TABS & CARDS
-   ========================================================= */
+// Menu tabs and cards
 let activeCategory = "all";
 
 function initMenuTabs() {
@@ -118,6 +114,11 @@ function renderSignatureMenu(category) {
       ? FOYE_DATA.signatureMenus
       : FOYE_DATA.signatureMenus.filter((item) => item.category === category);
 
+  if (!items.length) {
+    grid.innerHTML = `<p class="sm:col-span-2 lg:col-span-3 text-sm text-foye-ink/65">Belum ada menu dalam kategori ini.</p>`;
+    return;
+  }
+
   grid.innerHTML = items
     .map(
       (item, index) => `
@@ -127,6 +128,8 @@ function renderSignatureMenu(category) {
             src="${item.image}"
             alt="${item.name}"
             loading="lazy"
+            decoding="async"
+            onerror="this.hidden = true"
             class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           />
           ${
@@ -157,9 +160,7 @@ function renderSignatureMenu(category) {
     .join("");
 }
 
-/* =========================================================
-   4. SPACES & VIP ROOM CARDS
-   ========================================================= */
+// Dining spaces
 function renderSpaces() {
   const grid = document.getElementById("spaces-grid");
   if (!grid) return;
@@ -175,6 +176,8 @@ function renderSpaces() {
             src="${space.image}"
             alt="${space.name}"
             loading="lazy"
+            decoding="async"
+            onerror="this.hidden = true"
             class="w-full h-full object-cover"
           />
           <span class="absolute bottom-3 left-3 bg-foye-ink/80 backdrop-blur-xs text-foye-paper text-[10px] uppercase tracking-[0.16em] px-2.5 py-1 rounded-[2px]">
@@ -199,9 +202,7 @@ function renderSpaces() {
     .join("");
 }
 
-/* =========================================================
-   5. SLIDE-OVER FULL MENU DRAWER
-   ========================================================= */
+// Full menu drawer
 function renderFullMenuDrawer() {
   const container = document.getElementById("full-menu-content");
   if (!container) return;
@@ -241,13 +242,13 @@ function initDrawerEvents() {
   const openBtn = document.getElementById("open-full-menu-btn");
   const closeBtn = document.getElementById("close-drawer-btn");
 
-  if (!drawer || !openBtn) return;
+  if (!drawer || !backdrop || !panel || !openBtn || !closeBtn) return;
 
   const openDrawer = () => {
     drawer.classList.remove("hidden");
     drawer.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    // Trigger CSS transition on next frame
+    closeBtn.focus();
     requestAnimationFrame(() => {
       backdrop.classList.remove("opacity-0");
       panel.classList.remove("translate-x-full");
@@ -261,6 +262,7 @@ function initDrawerEvents() {
     document.body.style.overflow = "";
     setTimeout(() => {
       drawer.classList.add("hidden");
+      openBtn.focus();
     }, 300);
   };
 
@@ -269,8 +271,27 @@ function initDrawerEvents() {
   backdrop.addEventListener("click", closeDrawer);
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !drawer.classList.contains("hidden")) {
+    if (drawer.classList.contains("hidden")) return;
+
+    if (e.key === "Escape") {
       closeDrawer();
+      return;
+    }
+
+    if (e.key !== "Tab") return;
+
+    const focusable = panel.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   });
 }

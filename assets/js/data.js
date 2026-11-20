@@ -14,7 +14,7 @@ const FOYE_DATA = {
     whatsappNumber: "6287876964089",
     instagramUrl: "https://www.instagram.com/foyebistro/",
     googleMapsUrl: "https://www.google.com/maps/place/Foye+Bistro+-+Dharmahusada/@-7.2670799,112.768992,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fa298a3664b5:0x7f11723724c8c223!8m2!3d-7.2670799!4d112.768992!16s%2Fg%2F11s2m1ygsr",
-    heroImage: "assets/images/hero/hero-main.webp",
+    heroImage: "assets/images/hero/hero-banner-optimized.jpg",
     waMessages: {
       general: "Halo Foye Bistro, saya ingin melakukan reservasi meja untuk [Jumlah Orang] orang pada tanggal [Tanggal] pukul [Jam].",
       vip: "Halo Foye Bistro, saya ingin menanyakan info kapasitas dan ketersediaan VIP Room untuk acara pada tanggal [Tanggal]."

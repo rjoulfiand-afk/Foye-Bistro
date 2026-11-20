@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foye Bistro — Modern Asian Dining | Dharmahusada, Surabaya</title>
   <meta name="description" content="Modern Asian Bistro di Dharmahusada, Surabaya. Nikmati sajian kurasi terbaik, suasana indoor & outdoor estetik, serta ruang VIP untuk acara privat." />
+  <meta name="theme-color" content="#1A4F49" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="Foye Bistro" />
+  <meta property="og:title" content="Foye Bistro — Modern Asian Dining" />
+  <meta property="og:description" content="Modern Asian Bistro di Dharmahusada, Surabaya dengan menu kurasi, dining spaces, dan VIP Room." />
+  <meta property="og:image" content="assets/images/hero/hero-banner-optimized.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Foye Bistro — Modern Asian Dining" />
+  <meta name="twitter:description" content="Modern Asian Bistro di Dharmahusada, Surabaya dengan menu kurasi, dining spaces, dan VIP Room." />
+  <meta name="twitter:image" content="assets/images/hero/hero-banner-optimized.jpg" />
+
+  <!-- Critical hero asset -->
+  <link rel="preload" as="image" href="assets/images/hero/hero-banner-optimized.jpg" fetchpriority="high" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/brand/favicon.png" />
@@ -14,8 +28,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Critical styles prevent unstyled content while Tailwind loads -->
+  <style>
+    html, body { background: #F6F3EC; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; border: 0; opacity: 0; transition: opacity 0.45s ease-out; }
+    body.styles-ready { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) {
+      body { transition: none; }
+    }
+  </style>
+
   <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" onload="document.body.classList.add('styles-ready')"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -43,8 +68,45 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/custom.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Foye Bistro",
+      "description": "Modern Asian Bistro di Dharmahusada, Surabaya dengan menu kurasi, dining spaces, dan VIP Room.",
+      "image": "assets/images/hero/hero-banner-optimized.jpg",
+      "url": "./",
+      "telephone": "+6287876964089",
+      "servesCuisine": ["Asian", "Modern Asian"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Dharmahusada No.122, Mojo, Kec. Gubeng",
+        "addressLocality": "Surabaya",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "60285",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/foyebistro/"
+      ]
+    }
+  </script>
 </head>
-<body class="bg-foye-paper text-foye-ink font-sans antialiased selection:bg-foye-teal selection:text-foye-paper pb-16 md:pb-0">
+<body class="bg-foye-paper text-foye-ink font-sans antialiased selection:bg-foye-teal selection:text-foye-paper pb-16 md:pb-0" onload="document.body.classList.add('styles-ready')">
 
   <!-- =========================================================
        PREVIEW BANNER (Penanda bahwa ini prototipe khusus pitching)
@@ -58,7 +120,7 @@
     <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
       <!-- Brand Mark -->
       <a href="#top" class="flex items-center gap-3 group">
-        <img src="assets/images/brand/logo-foye.png" alt="Foye Bistro Logo" class="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+        <img src="assets/images/brand/logo-foye.svg" alt="Foye Bistro Logo" class="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
         <div class="leading-none">
           <span class="block font-serif text-xl sm:text-2xl font-semibold tracking-tight text-foye-teal">Foye Bistro</span>
           <span class="block text-[10px] uppercase tracking-[0.22em] text-foye-brick mt-0.5">Dharmahusada</span>
@@ -92,19 +154,23 @@
       <!-- Background Image -->
       <img
         id="hero-image"
-        src=""
+        src="assets/images/hero/hero-banner-optimized.jpg"
         alt="Suasana Foye Bistro Dharmahusada"
-        class="absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
+        fetchpriority="high"
+        decoding="async"
+        class="absolute inset-0 w-full h-full object-cover object-center scale-[1.01] hero-image"
+        onload="this.classList.add('is-loaded')"
+        onerror="this.hidden = true"
       />
       <!-- Subtle Directional Scrim (bukan blok hitam rata) -->
       <div class="absolute inset-0 bg-gradient-to-t from-foye-ink/90 via-foye-ink/40 to-foye-ink/15"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-foye-ink/60 via-transparent to-transparent"></div>
 
       <!-- Hero Content -->
-      <div class="relative z-10 max-w-6xl mx-auto w-full px-5 sm:px-8 pb-12 sm:pb-20 pt-24">
+      <div class="hero-content relative z-10 max-w-6xl mx-auto w-full px-5 sm:px-8 pb-12 sm:pb-20 pt-24">
         <div class="max-w-2xl">
           <p class="text-[11px] sm:text-xs uppercase tracking-[0.26em] text-foye-paper/80 mb-4 flex items-center gap-3">
-            <span class="w-8 h-[1px] bg-foye-red"></span>
+            <span aria-hidden="true" class="h-8 w-0.5 shrink-0 bg-foye-red"></span>
             Modern Asian Bistro · Surabaya
           </p>
 
@@ -134,17 +200,17 @@
     ========================================================== -->
     <section class="border-b border-foye-ink/10 bg-foye-paper">
       <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-xs sm:text-sm">
-        <div class="flex items-start gap-3">
-          <span class="text-foye-brick font-semibold uppercase tracking-[0.15em] text-[10px] mt-1 shrink-0">Jam Buka</span>
-          <p id="info-hours" class="text-foye-ink/85"></p>
+        <div class="flex items-center gap-3">
+          <span class="shrink-0 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.15em] leading-none text-foye-brick">Jam Buka</span>
+          <p id="info-hours" class="leading-relaxed text-foye-ink/85"></p>
         </div>
-        <div class="flex items-start gap-3 sm:border-l sm:border-foye-ink/10 sm:pl-8">
-          <span class="text-foye-brick font-semibold uppercase tracking-[0.15em] text-[10px] mt-1 shrink-0">Lokasi</span>
-          <p id="info-address" class="text-foye-ink/85"></p>
+        <div class="flex items-center gap-3 sm:border-l sm:border-foye-ink/10 sm:pl-8">
+          <span class="shrink-0 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.15em] leading-none text-foye-brick">Lokasi</span>
+          <p id="info-address" class="leading-relaxed text-foye-ink/85"></p>
         </div>
-        <div class="flex items-start gap-3 sm:border-l sm:border-foye-ink/10 sm:pl-8">
-          <span class="text-foye-brick font-semibold uppercase tracking-[0.15em] text-[10px] mt-1 shrink-0">Private</span>
-          <p class="text-foye-ink/85">Tersedia VIP Room &amp; reservasi grup</p>
+        <div class="flex items-center gap-3 sm:border-l sm:border-foye-ink/10 sm:pl-8">
+          <span class="shrink-0 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.15em] leading-none text-foye-brick">Private</span>
+          <p class="leading-relaxed text-foye-ink/85">Tersedia VIP Room &amp; reservasi grup</p>
         </div>
       </div>
     </section>
@@ -290,7 +356,7 @@
   <footer class="bg-foye-teal-dark text-foye-paper/75 border-t border-foye-paper/10">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
       <div class="flex items-center gap-3">
-        <img src="assets/images/brand/logo-foye.png" alt="Foye Bistro" class="h-6 w-auto object-contain brightness-0 invert opacity-90" />
+        <img src="assets/images/brand/logo-foye-white.svg" alt="Foye Bistro" class="h-6 w-auto object-contain opacity-90" />
         <span class="font-serif text-lg text-white font-medium">Foye Bistro</span>
         <span class="text-foye-paper/30">|</span>
         <span>Modern Asian Bistro · Surabaya</span>
@@ -321,12 +387,12 @@
     <div id="drawer-backdrop" class="absolute inset-0 bg-foye-ink/60 backdrop-blur-xs opacity-0 transition-opacity duration-300"></div>
 
     <!-- Drawer Panel -->
-    <aside id="drawer-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-foye-paper text-foye-ink shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <aside id="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" class="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-foye-paper text-foye-ink shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
       <!-- Drawer Header -->
       <div class="px-6 py-5 border-b border-foye-ink/10 flex items-center justify-between bg-foye-paper">
         <div>
           <p class="text-[10px] uppercase tracking-[0.2em] text-foye-brick font-semibold">Foye Menu Preview</p>
-          <h3 class="font-serif text-2xl font-semibold text-foye-teal">Daftar Menu Lengkap</h3>
+          <h3 id="drawer-title" class="font-serif text-2xl font-semibold text-foye-teal">Daftar Menu Lengkap</h3>
         </div>
         <button id="close-drawer-btn" type="button" aria-label="Tutup Menu" class="w-9 h-9 flex items-center justify-center rounded-sm border border-foye-ink/15 hover:bg-foye-surface transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
