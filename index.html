@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foye Bistro — Modern Asian Dining | Dharmahusada, Surabaya</title>
+  <meta name="description" content="Modern Asian Bistro di Dharmahusada, Surabaya. Nikmati sajian kurasi terbaik, suasana indoor & outdoor estetik, serta ruang VIP untuk acara privat." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/brand/favicon.png" />
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            foye: {
+              paper: '#F6F3EC',      
+              surface: '#EDE8DD',     
+              teal: '#1A4F49',       
+              'teal-dark': '#113632', 
+              red: '#C83228',         
+              'red-dark': '#A3251D', 
+              brick: '#A65E3E',       
+              ink: '#1A1F1E',         
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+</head>
+<body class="bg-foye-paper text-foye-ink font-sans antialiased selection:bg-foye-teal selection:text-foye-paper pb-16 md:pb-0">
+
+  <!-- =========================================================
+       PREVIEW BANNER (Penanda bahwa ini prototipe khusus pitching)
+  ========================================================== -->
+ 
+
+  <!-- =========================================================
+       STICKY NAVBAR
+  ========================================================== -->
+  <header id="navbar" class="sticky top-0 z-40 transition-all duration-300 bg-foye-paper/90 backdrop-blur-md border-b border-foye-ink/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Brand Mark -->
+      <a href="#top" class="flex items-center gap-3 group">
+        <img src="assets/images/brand/logo-foye.png" alt="Foye Bistro Logo" class="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+        <div class="leading-none">
+          <span class="block font-serif text-xl sm:text-2xl font-semibold tracking-tight text-foye-teal">Foye Bistro</span>
+          <span class="block text-[10px] uppercase tracking-[0.22em] text-foye-brick mt-0.5">Dharmahusada</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Max 3 link utama) -->
+      <nav class="hidden md:flex items-center gap-9 text-sm font-medium text-foye-ink/80">
+        <a href="#menu" class="hover:text-foye-teal transition-colors">Menu</a>
+        <a href="#spaces" class="hover:text-foye-teal transition-colors">Spaces &amp; VIP</a>
+        <a href="#location" class="hover:text-foye-teal transition-colors">Location</a>
+      </nav>
+
+      <!-- Primary Action -->
+      <div class="flex items-center gap-3">
+        <a href="#" data-wa="general" class="inline-flex items-center gap-2 bg-foye-red hover:bg-foye-red-dark text-white text-xs sm:text-sm font-medium px-4 sm:px-5 py-2.5 rounded-sm transition-colors">
+          <span>Reservasi</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- =========================================================
+         SECTION 1: EDITORIAL HERO
+    ========================================================== -->
+    <section class="relative min-h-[82svh] sm:min-h-[86svh] flex items-end overflow-hidden bg-foye-teal-dark">
+      <!-- Background Image -->
+      <img
+        id="hero-image"
+        src=""
+        alt="Suasana Foye Bistro Dharmahusada"
+        class="absolute inset-0 w-full h-full object-cover object-center scale-[1.01]"
+      />
+      <!-- Subtle Directional Scrim (bukan blok hitam rata) -->
+      <div class="absolute inset-0 bg-gradient-to-t from-foye-ink/90 via-foye-ink/40 to-foye-ink/15"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-foye-ink/60 via-transparent to-transparent"></div>
+
+      <!-- Hero Content -->
+      <div class="relative z-10 max-w-6xl mx-auto w-full px-5 sm:px-8 pb-12 sm:pb-20 pt-24">
+        <div class="max-w-2xl">
+          <p class="text-[11px] sm:text-xs uppercase tracking-[0.26em] text-foye-paper/80 mb-4 flex items-center gap-3">
+            <span class="w-8 h-[1px] bg-foye-red"></span>
+            Modern Asian Bistro · Surabaya
+          </p>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-medium text-foye-paper leading-[1.05] tracking-tight">
+            Rasa Asia Modern,<br />
+            <span class="italic font-normal text-foye-paper/90">dalam Suasana Hangat.</span>
+          </h1>
+
+          <p class="mt-5 text-sm sm:text-base text-foye-paper/80 max-w-lg leading-relaxed">
+            Hidangan kontemporer, racikan minuman kurasi, serta pilihan area indoor, outdoor, dan VIP Room untuk makan siang santai hingga jamuan malam di Dharmahusada.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3.5">
+            <a href="#" data-wa="general" class="inline-flex items-center justify-center bg-foye-red hover:bg-foye-red-dark text-white text-sm font-medium px-6 py-3.5 rounded-sm transition-colors">
+              Reservasi Meja
+            </a>
+            <a href="#menu" class="inline-flex items-center justify-center border border-foye-paper/40 hover:border-foye-paper hover:bg-foye-paper/10 text-foye-paper text-sm font-medium px-6 py-3.5 rounded-sm transition-colors">
+              Lihat Menu Pilihan
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         QUICK INFO BAR (Pengganti fungsi cepat Linktree)
+    ========================================================== -->
+    <section class="border-b border-foye-ink/10 bg-foye-paper">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-xs sm:text-sm">
+        <div class="flex items-start gap-3">
+          <span class="text-foye-brick font-semibold uppercase tracking-[0.15em] text-[10px] mt-1 shrink-0">Jam Buka</span>
+          <p id="info-hours" class="text-foye-ink/85"></p>
+        </div>
+        <div class="flex items-start gap-3 sm:border-l sm:border-foye-ink/10 sm:pl-8">
+          <span class="text-foye-brick font-semibold uppercase tracking-[0.15em] text-[10px] mt-1 shrink-0">Lokasi</span>
+          <p id="info-address" class="text-foye-ink/85"></p>
+        </div>
+        <div class="flex items-start gap-3 sm:border-l sm:border-foye-ink/10 sm:pl-8">
+          <span class="text-foye-brick font-semibold uppercase tracking-[0.15em] text-[10px] mt-1 shrink-0">Private</span>
+          <p class="text-foye-ink/85">Tersedia VIP Room &amp; reservasi grup</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 2: CURATED SIGNATURE MENU
+    ========================================================== -->
+    <section id="menu" class="py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-foye-ink/10">
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-foye-brick font-semibold mb-2">Curated Selection</p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-medium text-foye-teal leading-none">
+              Menu <span class="italic">Andalan</span> Kami
+            </h2>
+          </div>
+
+          <!-- Category Filter Tabs (Rendered via JS) -->
+          <div id="menu-tabs" class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Kategori Menu">
+            <!-- Buttons injected by main.js -->
+          </div>
+        </div>
+
+        <!-- Menu Grid (6-8 Curated Items) -->
+        <div id="menu-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
+          <!-- Cards injected by main.js -->
+        </div>
+
+        <!-- Footer Action: Buka Drawer Menu Lengkap -->
+        <div class="mt-14 pt-8 border-t border-foye-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p class="text-xs sm:text-sm text-foye-ink/65">
+            Harga belum termasuk pajak &amp; layanan. Menu musiman tersedia sesuai ketersediaan harian.
+          </p>
+          <button
+            id="open-full-menu-btn"
+            type="button"
+            class="inline-flex items-center gap-2.5 text-sm font-medium text-foye-teal hover:text-foye-red border border-foye-teal/30 hover:border-foye-red px-5 py-3 rounded-sm transition-colors"
+          >
+            <span>Lihat Daftar Menu Lengkap</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 3: SPACES & VIP ROOM (30% Deep Teal Anchor Block)
+    ========================================================== -->
+    <section id="spaces" class="bg-foye-teal text-foye-paper py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <!-- Header -->
+        <div class="max-w-2xl mb-12 sm:mb-16">
+          <p class="text-[11px] uppercase tracking-[0.22em] text-foye-paper/65 font-medium mb-2">Dining Spaces</p>
+          <h2 class="font-serif text-4xl sm:text-5xl font-medium leading-tight">
+            Ruang yang Pas untuk <span class="italic text-foye-paper/90">Setiap Momen</span>
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-foye-paper/75 leading-relaxed">
+            Mulai dari makan siang kasual di area indoor, santai sore di outdoor, hingga meeting kantor dan perayaan privat di VIP Room.
+          </p>
+        </div>
+
+        <!-- Spaces Cards (Horizontal scroll-snap on mobile, 3-col grid on desktop) -->
+        <div id="spaces-grid" class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory no-scrollbar -mx-5 px-5 md:mx-0 md:px-0">
+          <!-- Space cards injected by main.js -->
+        </div>
+
+        <!-- Dedicated VIP Booking Strip -->
+        <div class="mt-12 p-6 sm:p-8 bg-foye-teal-dark border border-foye-paper/15 rounded-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <span class="inline-block text-[10px] uppercase tracking-[0.2em] text-foye-paper/70 mb-1.5">Private Dining &amp; Corporate Event</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-medium text-white">Berencana mengadakan gathering atau meeting?</h3>
+            <p class="text-sm text-foye-paper/75 mt-1">Tim kami siap bantu atur kapasitas meja, set menu grup, dan kebutuhan ruangan Anda.</p>
+          </div>
+          <a href="#" data-wa="vip" class="inline-flex items-center justify-center shrink-0 bg-foye-red hover:bg-foye-red-dark text-white text-sm font-medium px-6 py-3.5 rounded-sm transition-colors">
+            Tanya Ketersediaan VIP Room
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 4: LOCATION & DIRECT ACCESS (Linktree Replacement)
+    ========================================================== -->
+    <section id="location" class="py-20 sm:py-28 bg-foye-paper">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <!-- Left: Details -->
+          <div class="lg:col-span-5">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-foye-brick font-semibold mb-2">Visit Us</p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-medium text-foye-teal leading-none">
+              Temukan Kami di <span class="italic">Dharmahusada</span>
+            </h2>
+
+            <dl class="mt-8 space-y-6 border-t border-foye-ink/10 pt-8 text-sm">
+              <div>
+                <dt class="text-[11px] uppercase tracking-[0.18em] text-foye-ink/55 mb-1">Alamat</dt>
+                <dd id="loc-address" class="text-foye-ink font-medium leading-relaxed"></dd>
+              </div>
+              <div>
+                <dt class="text-[11px] uppercase tracking-[0.18em] text-foye-ink/55 mb-1">Jam Operasional</dt>
+                <dd id="loc-hours" class="text-foye-ink font-medium"></dd>
+              </div>
+              <div>
+                <dt class="text-[11px] uppercase tracking-[0.18em] text-foye-ink/55 mb-1">Reservasi &amp; Media Sosial</dt>
+                <dd class="mt-2 flex flex-wrap gap-3">
+                  <a href="#" data-wa="general" class="inline-flex items-center gap-2 bg-foye-red hover:bg-foye-red-dark text-white text-xs font-medium px-4 py-2.5 rounded-sm transition-colors">
+                    WhatsApp Reservasi
+                  </a>
+                  <a id="loc-maps-btn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-foye-teal/30 hover:border-foye-teal text-foye-teal text-xs font-medium px-4 py-2.5 rounded-sm transition-colors">
+                    Buka Google Maps
+                  </a>
+                  <a id="loc-ig-btn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-foye-ink/20 hover:border-foye-ink text-foye-ink text-xs font-medium px-4 py-2.5 rounded-sm transition-colors">
+                    @foyebistro
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Right: Map Embed -->
+          <div class="lg:col-span-7">
+            <div class="aspect-[16/11] w-full bg-foye-surface rounded-sm overflow-hidden border border-foye-ink/10">
+              <iframe
+                title="Peta Lokasi Foye Bistro Dharmahusada"
+                src="https://www.google.com/maps?q=Foye+Bistro+Dharmahusada+Surabaya&output=embed"
+                class="w-full h-full border-0 grayscale-[25%] contrast-[1.02]"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="bg-foye-teal-dark text-foye-paper/75 border-t border-foye-paper/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/brand/logo-foye.png" alt="Foye Bistro" class="h-6 w-auto object-contain brightness-0 invert opacity-90" />
+        <span class="font-serif text-lg text-white font-medium">Foye Bistro</span>
+        <span class="text-foye-paper/30">|</span>
+        <span>Modern Asian Bistro · Surabaya</span>
+      </div>
+      <p class="text-foye-paper/55">
+        Concept Website Preview · Siap dikembangkan dengan sistem manajemen menu &amp; reservasi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       MOBILE STICKY BOTTOM BAR (Thumb-Friendly Quick CTA)
+  ========================================================== -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-foye-paper/95 backdrop-blur-md border-t border-foye-ink/10 px-4 py-2.5 flex items-center gap-3">
+    <a href="#menu" class="flex-1 text-center border border-foye-teal/30 text-foye-teal text-xs font-semibold py-3 rounded-sm">
+      Lihat Menu
+    </a>
+    <a href="#" data-wa="general" class="flex-1 text-center bg-foye-red text-white text-xs font-semibold py-3 rounded-sm">
+      Reservasi WA
+    </a>
+  </div>
+
+  <!-- =========================================================
+       SLIDE-OVER DRAWER: FULL MENU LIST (Pengganti PDF Berat)
+  ========================================================== -->
+  <div id="menu-drawer" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+    <!-- Backdrop -->
+    <div id="drawer-backdrop" class="absolute inset-0 bg-foye-ink/60 backdrop-blur-xs opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Drawer Panel -->
+    <aside id="drawer-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-lg bg-foye-paper text-foye-ink shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+      <!-- Drawer Header -->
+      <div class="px-6 py-5 border-b border-foye-ink/10 flex items-center justify-between bg-foye-paper">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.2em] text-foye-brick font-semibold">Foye Menu Preview</p>
+          <h3 class="font-serif text-2xl font-semibold text-foye-teal">Daftar Menu Lengkap</h3>
+        </div>
+        <button id="close-drawer-btn" type="button" aria-label="Tutup Menu" class="w-9 h-9 flex items-center justify-center rounded-sm border border-foye-ink/15 hover:bg-foye-surface transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Drawer Body (Scrollable Menu List) -->
+      <div id="full-menu-content" class="flex-1 overflow-y-auto px-6 py-6 space-y-8">
+        <!-- Populated by main.js -->
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="px-6 py-4 border-t border-foye-ink/10 bg-foye-surface/60 flex items-center justify-between gap-3">
+        <span class="text-xs text-foye-ink/65">Harga dalam ribuan (IDR)</span>
+        <a href="#" data-wa="general" class="bg-foye-red hover:bg-foye-red-dark text-white text-xs font-medium px-4 py-2.5 rounded-sm transition-colors">
+          Reservasi Sekarang
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
