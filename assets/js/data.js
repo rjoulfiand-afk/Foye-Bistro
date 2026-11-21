@@ -85,7 +85,7 @@ const FOYE_DATA = {
       name: "Chicken Sliders & Hand-Cut Chips",
       category: "sharing",
       categoryLabel: "Sharing Plates",
-      description: "Brioche bun panggang lembut dengan isian ayam goreng krispi bersaus spesial, disajikan lengkap bersama keripik kentang renyah.",
+      description: "Brioche bun panggang lembut dengan isian ayam goreng krispi bersaus spesial.",
       price: "65K",
       is_signature: false,
       image: "assets/images/menu/menu-06.webp"
