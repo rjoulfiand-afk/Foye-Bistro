@@ -90,26 +90,6 @@ const FOYE_DATA = {
       is_signature: false,
       image: "assets/images/menu/menu-06.webp"
     },
-    {
-      id: 7,
-      name: "Lychee Oolong Spritz",
-      category: "drinks",
-      categoryLabel: "Artisan Drinks",
-      description: "Cold-brew oolong, leci, dan soda segar dengan aroma floral yang ringan.",
-      price: "48K",
-      is_signature: false,
-      image: "assets/images/menu/menu-07.webp"
-    },
-    {
-      id: 8,
-      name: "Yuzu Espresso Tonic",
-      category: "drinks",
-      categoryLabel: "Artisan Drinks",
-      description: "Double shot espresso, yuzu, dan tonic water dengan rasa citrus yang menyegarkan.",
-      price: "52K",
-      is_signature: false,
-      image: "assets/images/menu/menu-08.webp"
-    }
   ],
 
   // Daftar Menu Lengkap untuk Drawer (Ringan tanpa foto, pengganti PDF)
